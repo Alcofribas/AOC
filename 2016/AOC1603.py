@@ -1,22 +1,24 @@
 #!/usr/bin/python
 
+# this code is currenntly solving part 2 of the puzzle
+
 import os
 import sys
 
-# Arbeitsverzeichnis setzen
+# set working dir
 os.chdir(os.path.dirname(os.path.abspath(sys.argv[0])))
 
 # load data
 infile = open('AOC1603_input.txt')
 tri = [line.rstrip('\n').lstrip(' ').split() for line in infile]
-# debug: print tri
 infile.close()
 
-# check
+# redirect stdout to file
 output = open("AOC1603_output.txt","w")
 orig_stdout = sys.stdout
 sys.stdout = output
 
+# check triangles
 valid = 0
 for c in range(0,len(tri)-2,3):
     print c
@@ -30,8 +32,5 @@ for c in range(0,len(tri)-2,3):
 
 print "Number of valid triangles: %d" % valid
 
-# write travel protocol
-#
-# output.writelines([str(x)+"\n" for x in path])
 sys.stdout = orig_stdout
 output.close()
