@@ -1,10 +1,10 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 
 from operator import add
 import os
 import sys
 
-# Arbeitsverzeichnis setzen
+# set working directory
 os.chdir(os.path.dirname(os.path.abspath(sys.argv[0])))
 
 movements = [[0,-1],[1,0],[0,1],[-1,0]]
@@ -12,15 +12,15 @@ movements = [[0,-1],[1,0],[0,1],[-1,0]]
 # load directions
 dirFile = open("AOC1601_input.txt")
 directions = dirFile.read().split(', ')
-print directions
 dirFile.close()
 
-# walk!
-relPos = [0,0]
-curDir = 0
-path = [relPos]
-end = False
+# start setup
+relPos = [0,0]  # start form origin
+curDir = 0      # go north
+path = [relPos] # travel record
+end = False     # arrived flag
 
+# walk!
 for dir in directions:
     if dir[0] == 'L':
         curDir += -1+(curDir==0)*4
