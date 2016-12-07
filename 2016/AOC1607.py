@@ -43,7 +43,6 @@ def detectSSLPatterns(frag):
 
 def supportsTLS(ip):
     par = parseIP(ip)
-    print ip, par
     return (re.search('3',par) is None) and (re.search('1',par) is not None)
 
 # Arbeitsverzeichnis setzen
