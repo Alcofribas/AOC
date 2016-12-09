@@ -1,8 +1,7 @@
 #!/usr/bin/python2
 
-# rank: 506/293
-
-# to get a more elegant solution, parse input character-wise!
+# model solution
+# taken from: https://www.reddit.com/r/adventofcode/comments/5hbygy/2016_day_9_solutions/daz2o0d/
 
 import os
 import re
